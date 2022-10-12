@@ -1,0 +1,4 @@
+def calculate_statistics(df,ticket_ids):
+    df_sort = df.set_index(['ticket_id']).loc[ticket_ids]
+    dict = {'mean':df_sort.price.mean(), 'median':df_sort.price.median(), 'std':df_sort.price.std()}
+    return dict

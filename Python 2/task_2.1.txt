@@ -1,0 +1,4 @@
+def find_null_columns(df):
+    s = df.isnull().replace({True:1,False:0}).sum().to_frame()
+    return list(s[s.values>0].index)
+

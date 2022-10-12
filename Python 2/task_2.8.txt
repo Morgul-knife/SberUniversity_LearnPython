@@ -1,0 +1,3 @@
+def count_namesakes(df, k):
+    ser = df.groupby(df.second_name).size()
+    return ser[ser.values >= k].count()

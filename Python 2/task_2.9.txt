@@ -1,0 +1,2 @@
+def count_avg_price(df):
+    return df.set_index(['flight_id']).groupby('flight_id').price.mean().to_frame()

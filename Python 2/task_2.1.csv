@@ -1,0 +1,4 @@
+flight_id,flight_no,status,aircraft_code
+1,,Delayed,B125
+2,X77234,Cancelled,
+3,Y987544,Departed,C12678

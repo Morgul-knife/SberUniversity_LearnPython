@@ -1,0 +1,5 @@
+def replace_nan(df):
+    new_col = df.price.fillna(df.price.mean()).to_frame()
+    del df['price']
+    df['price'] = new_col
+    return df

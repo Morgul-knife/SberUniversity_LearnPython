@@ -1,0 +1,4 @@
+def calculate_statistics(df):
+    dict = {'mean':df.price.mean(), 'median':df.price.median(), 'std':df.price.std()}
+    return dict
+
