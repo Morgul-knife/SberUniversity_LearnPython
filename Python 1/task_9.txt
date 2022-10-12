@@ -1,0 +1,20 @@
+from datetime import datetime as dt
+N = int(input())
+sd = []
+sa = []
+ad = []
+aa = []
+for i in range(N):
+    str_in = input()
+    scheduled_departure = str_in.split(',')[0]
+    scheduled_arrival = str_in.split(',')[1]
+    actual_departure = str_in.split(',')[2]
+    actual_arrival = str_in.split(',')[3]
+    sd.append(dt.fromisoformat(scheduled_departure))
+    sa.append(dt.fromisoformat(scheduled_arrival))
+    ad.append(dt.fromisoformat(actual_departure))
+    aa.append(dt.fromisoformat(actual_arrival))
+for i in range(N):
+    if abs(sd[i]-ad[i]).total_seconds() < 1800 and abs(sa[i]-aa[i]).total_seconds() < 1800:
+        print('Yes')
+    else: print('No')

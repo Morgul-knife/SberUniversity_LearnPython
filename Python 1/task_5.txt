@@ -1,0 +1,18 @@
+N = int(input())
+a = []
+for i in range(N):
+    str_in = input()
+    flight_id = int(str_in.split(',')[1])
+    a.append(flight_id) 
+max_values = []
+counter = 0
+for i in range(0,len(a)):
+    curr_frequency = a.count(a[i])
+    if (curr_frequency > counter) and (max_values.count(a[i]) == 0) and (a[i]>0):
+        max_values.clear()
+        counter = curr_frequency
+        max_values.append(a[i])
+    elif (curr_frequency == counter) and (max_values.count(a[i]) == 0) and (a[i]>0):
+        max_values.append(a[i])
+max_values.sort()
+print(' '.join([str(_) for _ in max_values]))

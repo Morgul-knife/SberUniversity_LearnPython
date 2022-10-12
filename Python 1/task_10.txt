@@ -1,0 +1,29 @@
+N = int(input())
+scheduled = []
+on_time = []
+delayed = []
+departed = []
+arrived = []
+cancelled = []
+for i in range(N):
+    str_in = input()
+    flight_id = str_in.split(',')[0]
+    status = str_in.split(',')[1]
+    if status == 'Scheduled':
+        scheduled.append(flight_id)
+    elif status == 'On Time':
+        on_time.append(flight_id)
+    elif status == 'Delayed':
+        delayed.append(flight_id)
+    elif status == 'Departed':
+        departed.append(flight_id)
+    elif status == 'Arrived':
+        arrived.append(flight_id)
+    else: 
+        cancelled.append(flight_id)
+print(len(scheduled))
+print(len(on_time))
+print(len(delayed))
+print(len(departed))
+print(len(arrived)) 
+print(len(cancelled))

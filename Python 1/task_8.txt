@@ -1,0 +1,6 @@
+N = int(input())
+a = set(map(int,input().split(',')))
+for i in range(1,N):
+    str_in = set(map(int,input().split(',')))
+    a.intersection_update(str_in)     
+print(','.join(str(_) for _ in sorted(list(a))))

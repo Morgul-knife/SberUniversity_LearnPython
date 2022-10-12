@@ -1,0 +1,12 @@
+N = int(input())
+a = []
+for i in range(N):
+    str_in = input()
+    book_ref = str_in.split(',')[0]
+    book_date = str_in.split(',')[1]
+    total_amount = str_in.split(',')[2]
+    str_out = 'Номер бронирования '+ book_ref +', забронирован '+ book_date + '. Цена: '+ total_amount.split('.')[0]+' руб. ' + total_amount.split('.')[1] +' коп.'
+    a.append(str_out)
+for i in range(N):
+    print(a[i])   
+

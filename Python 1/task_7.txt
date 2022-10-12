@@ -1,0 +1,23 @@
+N = int(input())
+b = []
+a = []
+for i in range(N):
+    str_in = input()
+    flight_id = int(str_in.split(',')[1])
+    seat_no = str_in.split(',')[3]
+    b.append(flight_id)
+    a.append(seat_no)    
+di = dict(zip(a,b)) # создание словаря из двух списков
+# перевернутый словарь
+flipped = {} 
+for key, value in di.items():
+    if value not in flipped:
+        flipped[value] = [key]
+    else:
+        flipped[value].append(key)
+# сортировка словаря
+flipped = dict(sorted(flipped.items()))
+# печать
+for i in range(len(flipped)):
+    print(str(list(flipped.keys())[i]))
+    print(','.join(list(flipped.values())[i])) 
